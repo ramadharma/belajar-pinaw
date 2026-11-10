@@ -304,10 +304,13 @@
             <li><strong>X₄</strong> = total ekuitas ÷ total liabilitas</li>
           </ul>
           <p class="small" style="margin-top:10px"><strong>Apa itu:</strong> financial distress adalah kondisi perusahaan yang mengalami permasalahan keuangan dan dapat berkembang menuju kegagalan usaha — dari failure, insolvency, default, sampai bankruptcy. <strong>Altman Z-Score</strong> adalah model yang menggabungkan empat rasio keuangan untuk mengklasifikasi perusahaan berdasarkan kemungkinan kegagalan keuangan itu: nilai Z yang rendah berarti makin dekat ke tekanan keuangan, tinggi berarti makin sehat. Di skripsi ini dipilih versi empat variabel karena tidak membutuhkan komponen <em>sales to total assets</em> — pas untuk perusahaan nonmanufaktur seperti telekomunikasi, dan keempat komponennya semuanya sudah tersedia di laporan keuangan.</p>
+          <p class="simple"><b>Ibaratnya:</b> Z-Score itu EKG yang nyangkut empat sensor: modal kerja, saldo laba, laba operasi, dan kekuatan ekuitas dibanding utang. Nilai Z rendah = detaknya melemah, makin dekat kondisi kritis; Z tinggi = keuangan perusahaannya sehat.</p>
         </div>
         <div class="card">
           <h3>DAR &amp; ROA</h3>
           <p><strong>DAR</strong> = rasio yang membandingkan total utang dengan total aset untuk menunjukkan proporsi aset yang dibiayai oleh utang. Contohnya: DAR 50% berarti setengah aset perusahaan didanai liabilitas, sisanya dari pendanaan lain. <strong>ROA</strong> = rasio yang menunjukkan kemampuan perusahaan menghasilkan laba bersih dengan memanfaatkan keseluruhan aset yang dimiliki. <strong>Audit delay</strong> = jangka waktu penyelesaian audit, dihitung sejak tanggal berakhirnya periode pelaporan sampai tanggal diterbitkannya laporan auditor independen — panjang-pendeknya menunjukkan cepat atau lambatnya penyelesaian pemeriksaan.</p>
+          <p class="small" style="margin-top:10px"><strong>Kenapa dipakai di skripsi ini:</strong> DAR dipilih jadi ukuran leverage karena mampu menunjukkan proporsi aset yang dibiayai liabilitas — dari situ kelihatan seberapa besar perusahaan mengandalkan pendanaan kreditur untuk membentuk aset usahanya. ROA dipilih jadi ukuran profitabilitas karena menunjukkan hasil yang diperoleh perusahaan dari pemanfaatan asetnya dalam menjalankan usaha.</p>
+          <p class="simple"><b>Ibaratnya:</b> DAR itu mengecek “berapa persen barang di kedai yang masih dicicil sama bank” — makin tinggi, makin banyak aset yang belum bener-bener milik sendiri. ROA mengecek “sepanjang tahun, tiap rupiah aset menghasilkan untung berapa” — makin tinggi, makin produktif barang-barangnya.</p>
           <div class="formula">
             <span class="lbl">Leverage</span>
             DAR = <span class="frac"><span class="num">Total Liabilitas</span><span class="den">Total Aset</span></span> × 100%
@@ -592,7 +595,31 @@
 
       <div class="note">
         <div class="note-label">Tiga model kandidat, satu batas keputusan</div>
-        <p>Data 16 perusahaan × 5 tahun = 80 observasi berbentuk <strong>data panel</strong>: gabungan lintas perusahaan dan lintas waktu. Karena itu satu model regresi biasa nggak otomatis pas — ada tiga kandidat. <strong>CEM</strong> (Common Effect Model) menganggap semua perusahaan punya karakteristik yang sama. <strong>FEM</strong> (Fixed Effect Model) memberi tiap perusahaan intersep sendiri. <strong>REM</strong> (Random Effect Model) memperlakukan perbedaan antarperusahaan sebagai komponen acak. Model yang dipilih ditentukan lewat uji Chow, lalu Hausman, lalu LM — ketiganya diuji dengan batas probabilitas 0,05, sesuai urutan alur di bawah.</p>
+        <p>Data 16 perusahaan × 5 tahun = 80 observasi berbentuk <strong>data panel</strong>: gabungan lintas perusahaan dan lintas waktu. Karena itu satu model regresi biasa nggak otomatis pas — ada tiga kandidat, dan pemenangnya ditentukan uji (Chow, Hausman, LM dengan batas 0,05), bukan selera.</p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:18px;margin-top:18px">
+        <div class="card test-card">
+          <span class="symbol">CEM</span>
+          <h4>Common Effect Model</h4>
+          <p>Semua perusahaan dianggap punya karakteristik yang sama, jadi satu intersep dipakai bersama. Jadi kandidat karena paling sederhana — jalur dasar yang diadu paling awal lewat uji Chow.</p>
+          <div class="threshold"><span>Chow p &gt; 0,05 → terpilih</span></div>
+          <p class="simple"><b>Ibaratnya:</b> 16 kedai dianggap identik — cukup satu resep buat semua, nggak peduli lokasinya beda-beda.</p>
+        </div>
+        <div class="card test-card">
+          <span class="symbol">FEM</span>
+          <h4>Fixed Effect Model</h4>
+          <p>Tiap perusahaan punya intersep sendiri; perbedaan antarperusahaan dianggap efek yang tetap. Jadi kandidat kalau uji Chow menunjukkan perusahaan tidak bisa diseragamkan.</p>
+          <div class="threshold"><span>Chow p &lt; 0,05</span><span>Hausman p &lt; 0,05</span></div>
+          <p class="simple"><b>Ibaratnya:</b> tiap kedai dikasih resep sendiri sesuai kondisinya — kedai pinggir jalan beda perlakuan sama kedai di mall, dan perbedaannya itu dianggap bawaan tetap.</p>
+        </div>
+        <div class="card test-card">
+          <span class="symbol">REM</span>
+          <h4>Random Effect Model</h4>
+          <p>Perbedaan antarperusahaan diperlakukan sebagai komponen acak, bukan karakter tetap. Jadi kandidat lewat uji Hausman; kalau Hausman memilih REM, uji LM yang menyelesaikan CEM vs REM.</p>
+          <div class="threshold"><span>Hausman p &gt; 0,05</span><span>LM p &lt; 0,05 → REM</span></div>
+          <p class="simple"><b>Ibaratnya:</b> beda hasil tiap kedai dianggap seperti cuaca — kadang ramai kadang sepi, kebetulan doang, bukan karena karakternya.</p>
+        </div>
       </div>
 
       <h3 style="font-size:1.35rem;margin:30px 0 12px">Uji asumsi klasik</h3>
