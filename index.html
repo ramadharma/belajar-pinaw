@@ -596,7 +596,14 @@
       </div>
 
       <h3 style="font-size:1.35rem;margin:30px 0 12px">Uji asumsi klasik</h3>
-      <div class="grid-2">
+      <div class="grid-3">
+        <div class="card test-card">
+          <span class="symbol">JB</span>
+          <h4>Normalitas</h4>
+          <p>Mengecek apakah residual model regresi berdistribusi normal. Diuji dengan Jarque-Bera: probabilitas &gt; 0,05 berarti residual berdistribusi normal; lebih kecil berarti tidak.</p>
+          <div class="threshold"><span>Uji Jarque-Bera</span><span>sig. &gt; 0,05</span></div>
+          <div class="rule"><b>Kalau lolos:</b> asumsi distribusi residual terpenuhi. <b>Kalau gagal:</b> residual tidak normal, perlu perbaikan model atau transformasi data.</div>
+        </div>
         <div class="card test-card">
           <span class="symbol">VIF</span>
           <h4>Multikolinearitas</h4>
@@ -616,9 +623,9 @@
       <div class="note">
         <div class="note-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 2.4 17.5A2 2 0 0 0 4.1 20.5h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
-          Dua uji yang belum ada
+          Autokorelasi: satu-satunya yang belum diuji
         </div>
-        <p>Draft terbaru sudah memuat uji normalitas Jarque-Bera. Autokorelasi masih perlu dikonfirmasi sesuai model panel. Jangan mengklaim “tidak perlu” tanpa alasan. Siapkan jawaban: “Penelitian ini berfokus pada asumsi yang relevan untuk estimasi data panel; jika pembimbing meminta, saya tambahkan uji normalitas residual dan Durbin–Watson sebagai uji pelengkap.”</p>
+        <p>Uji normalitas Jarque-Bera, multikolinearitas, dan heteroskedastisitas sudah tertulis di Bab III. Yang belum ada adalah autokorelasi — jangan mengklaim “tidak perlu” tanpa alasan. Siapkan jawabannya: “Penelitian ini berfokus pada asumsi yang relevan untuk estimasi data panel; jika pembimbing meminta, saya tambahkan uji Durbin–Watson sebagai uji pelengkap.”</p>
       </div>
 
       <div class="note">
@@ -732,10 +739,10 @@
         </div>
       </div>
       <div class="deck-row" role="group" aria-label="Pilih dek kartu">
-        <button class="filter" type="button" data-deck="semua" aria-pressed="true">Semua <span>27</span></button>
+        <button class="filter" type="button" data-deck="semua" aria-pressed="true">Semua <span>28</span></button>
         <button class="filter" type="button" data-deck="dasar" aria-pressed="false">Dasar <span>6</span></button>
         <button class="filter" type="button" data-deck="variabel" aria-pressed="false">Variabel <span>6</span></button>
-        <button class="filter" type="button" data-deck="analisis" aria-pressed="false">Analisis <span>11</span></button>
+        <button class="filter" type="button" data-deck="analisis" aria-pressed="false">Analisis <span>12</span></button>
         <button class="filter" type="button" data-deck="bimbingan" aria-pressed="false">Bimbingan <span>4</span></button>
       </div>
       <div class="fc-tools">
@@ -809,10 +816,10 @@
         </details>
 
         <details class="qa">
-          <summary><span class="qa-plus" aria-hidden="true"></span>“Kenapa tidak ada uji normalitas?”</summary>
+          <summary><span class="qa-plus" aria-hidden="true"></span>“Kenapa tidak ada uji autokorelasi?”</summary>
           <div class="qa-body">
-            <p>Jangan bilang “tidak perlu” begitu saja. Akui bahwa draft berfokus pada asumsi yang relevan untuk estimasi panel, lalu tawarkan uji tambahan.</p>
-            <span class="say"><b>Jawab:</b> “Uji normalitas saya gunakan untuk memeriksa distribusi residual dengan Jarque-Bera. Pengujian asumsi lain disesuaikan dengan karakteristik regresi data panel yang digunakan.”</span>
+            <p>Uji normalitas sudah aman: Jarque-Bera tertulis di Bab III, begitu juga multikolinearitas dan heteroskedastisitas. Yang belum diuji adalah autokorelasi. Tekankan keterkaitannya dengan karakteristik data panel dan tawarkan uji pelengkap — jangan jawab “tidak perlu” mentah-mentah.</p>
+            <span class="say"><b>Jawab:</b> “Normalitas saya uji dengan Jarque-Bera. Pengujian autokorelasi saya sesuaikan dengan karakteristik regresi data panel; jika diperlukan, saya tambahkan uji Durbin–Watson sebagai pelengkap.”</span>
           </div>
         </details>
 

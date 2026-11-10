@@ -248,6 +248,7 @@ const flashcards = [
   { deck: 'analisis', q: 'Uji Chow', a: 'Memilih CEM vs FEM. p < 0,05 → lanjut FEM dan Hausman; p > 0,05 → CEM.' },
   { deck: 'analisis', q: 'Uji Hausman', a: 'Memilih FEM vs REM. p < 0,05 → FEM; p > 0,05 → REM, lalu uji LM.' },
   { deck: 'analisis', q: 'Uji LM', a: 'Memilih CEM vs REM. p < 0,05 → REM; p > 0,05 → CEM.' },
+  { deck: 'analisis', q: 'Normalitas', a: 'Uji Jarque-Bera. Aman jika probabilitas > 0,05; residual berdistribusi normal.' },
   { deck: 'analisis', q: 'Multikolinearitas', a: 'Aman jika Tolerance > 0,10 dan VIF < 10.' },
   { deck: 'analisis', q: 'Heteroskedastisitas', a: 'Uji Glejser. Aman jika signifikansi > 0,05; varians residual tetap.' },
   { deck: 'analisis', q: 'Uji t', a: 'Parsial. p < 0,05 → masing-masing X berpengaruh signifikan terhadap Y.' },
