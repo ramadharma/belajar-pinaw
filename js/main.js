@@ -253,15 +253,10 @@ const flashcards = [
   { deck: 'analisis', q: 'Heteroskedastisitas', a: 'Mengetahui apakah varians residual berubah-ubah antar pengamatan; yang diinginkan tetap (homoskedastisitas). Uji Glejser: aman jika sig. > 0,05.' },
   { deck: 'analisis', q: 'Uji t', a: 'Parsial: menguji apakah masing-masing X sendiri-sendiri berpengaruh signifikan terhadap audit delay. p < 0,05 → signifikan.' },
   { deck: 'analisis', q: 'Uji F', a: 'Simultan: menguji apakah ketiga X bersama-sama berpengaruh terhadap audit delay. p < 0,05 → signifikan.' },
-  { deck: 'analisis', q: 'R²', a: 'Mengukur kemampuan ketiga X menjelaskan variasi audit delay. Rentang 0–1, makin dekat 1 makin besar. Pada panel, lihat Adjusted R².' },
-
-  { deck: 'bimbingan', q: 'H₁–H₄', a: 'Distress, leverage, profitabilitas → audit delay (parsial); ketiganya → audit delay (simultan).' },
-  { deck: 'bimbingan', q: 'Agency theory', a: 'Audit adalah mekanisme monitoring untuk mengurangi asimetri informasi antara principal dan agent.' },
-  { deck: 'bimbingan', q: 'DAR atau DER?', a: 'DAR. Draft menulis DER di satu kalimat, tetapi tabel 3.1 dan Bab II memakai DAR.' },
-  { deck: 'bimbingan', q: 'Kalau tidak signifikan?', a: 'Bukan kegagalan. Itu temuan; jelaskan kemungkinan penyebab dan keterbatasannya di pembahasan.' }
+  { deck: 'analisis', q: 'R²', a: 'Mengukur kemampuan ketiga X menjelaskan variasi audit delay. Rentang 0–1, makin dekat 1 makin besar. Pada panel, lihat Adjusted R².' }
 ];
 
-const deckNames = { dasar: 'Dasar', variabel: 'Variabel', analisis: 'Analisis', bimbingan: 'Bimbingan' };
+const deckNames = { dasar: 'Dasar', variabel: 'Variabel', analisis: 'Analisis' };
 const fcGrid = $('#fcGrid');
 const fcHint = $('#fcHint');
 const flipped = new Set();
