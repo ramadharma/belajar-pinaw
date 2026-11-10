@@ -603,6 +603,7 @@
           <p>Mengecek apakah residual model regresi berdistribusi normal. Diuji dengan Jarque-Bera: probabilitas &gt; 0,05 berarti residual berdistribusi normal; lebih kecil berarti tidak.</p>
           <div class="threshold"><span>Uji Jarque-Bera</span><span>sig. &gt; 0,05</span></div>
           <div class="rule"><b>Kalau lolos:</b> asumsi distribusi residual terpenuhi. <b>Kalau gagal:</b> residual tidak normal, perlu perbaikan model atau transformasi data.</div>
+          <p class="simple"><b>Ibaratnya:</b> sebelum masak, cek airnya dulu — kalau air kotor, masakan apa pun jadi diragukan. Residual itu “air”-nya model: harus bersih (normal) dulu, baru hasil uji lainnya boleh dipercaya.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">VIF</span>
@@ -610,6 +611,7 @@
           <p>Mengetahui apakah ada korelasi antar variabel independen dalam model. Harus dicek karena korelasi yang tinggi bisa mengacaukan ketepatan estimasi koefisien regresi — model yang baik tidak mengalaminya. Diukur lewat Tolerance (harus &gt; 0,10) dan VIF (harus &lt; 10).</p>
           <div class="threshold"><span>Tolerance &gt; 0,10</span><span>VIF &lt; 10</span></div>
           <div class="rule"><b>Kalau lolos:</b> koefisien regresi bisa dipercaya arahnya. <b>Kalau gagal:</b> antar-X saling menjelaskan, estimasi jadi tidak stabil.</div>
+          <p class="simple"><b>Ibaratnya:</b> mewawancara dua saksi yang selalu menjawab persis sama — bukan berarti lebih yakin, malah gak jelas siapa yang jujur. Kalau dua variabel selalu ngomong sama, satu aja cukup, dua-duanya malah bikin bingung.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">σ²</span>
@@ -617,6 +619,7 @@
           <p>Mengetahui apakah varians residual beda dari satu pengamatan ke pengamatan lainnya. Yang diinginkan justru variansnya tetap (homoskedastisitas); model yang baik tidak mengalami heteroskedastisitas. Diuji lewat Glejser: signifikansi di atas 0,05 berarti aman.</p>
           <div class="threshold"><span>Uji Glejser</span><span>sig. &gt; 0,05</span></div>
           <div class="rule"><b>Kalau lolos:</b> residual tidak membentuk pola. <b>Kalau gagal:</b> varians tidak konstan, model perlu diperbaiki.</div>
+          <p class="simple"><b>Ibaratnya:</b> hujan yang rapi — tetesnya jatuh seimbang dari kiri ke kanan. Kalau di ujung kanan tahu-tahu derasnya dobel, artinya penimbangannya gak seimbang dan hasilnya perlu diperiksa lagi.</p>
         </div>
       </div>
 
@@ -639,18 +642,21 @@
           <h4>Uji t — parsial</h4>
           <p>Dipakai untuk mengetahui pengaruh setiap variabel independen secara <em>parsial</em> terhadap audit delay: apakah financial distress sendiri, leverage sendiri, dan profitabilitas sendiri masing-masing berpengaruh signifikan. Keputusannya memakai tingkat signifikansi 5% (α = 0,05): probabilitas lebih kecil dari 0,05 berarti berpengaruh signifikan, lebih besar berarti tidak signifikan.</p>
           <div class="rule"><b>Baca:</b> probabilitas &lt; 0,05 → signifikan secara parsial. Lihat juga tanda koefisiennya.</div>
+            <p class="simple"><b>Ibaratnya:</b> tiga guru ditanya satu-satu: “guru ini sendiri nggak ngefek ke nilai ulanganmu?” — tanpa campuran temannya. Yang dijawab “nggefek” itu yang signifikan parsial.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">F</span>
           <h4>Uji F — simultan</h4>
           <p>Dipakai untuk mengetahui apakah financial distress, leverage, dan profitabilitas secara <em>bersama-sama</em> berpengaruh terhadap audit delay. Keputusannya juga di ambang 5%: probabilitas lebih kecil dari 0,05 berarti pengaruh simultannya signifikan, lebih besar berarti tidak signifikan.</p>
           <div class="rule"><b>Baca:</b> probabilitas &lt; 0,05 → model secara simultan signifikan.</div>
+            <p class="simple"><b>Ibaratnya:</b> kalimatnya jadi “semua guru, jawab bareng-bareng dong” — nilai tiga-tiganya dijumlah jadi satu paket. Kalau paketnya pengaruh, berarti secara kelompok mereka memang ngefek.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">R²</span>
           <h4>Koefisien determinasi</h4>
           <p>Mengukur kemampuan ketiga variabel independen dalam menjelaskan variasi audit delay — seberapa besar variasi pada audit delay yang bisa dijelaskan model. Nilainya di rentang nol sampai satu: makin dekat ke 1 berarti kemampuan penjelasan model makin besar; rendah berarti penjelasannya masih terbatas.</p>
           <div class="rule"><b>Baca:</b> 0 sampai 1. Makin dekat 1, makin besar daya jelas model. Pada data panel, lihat <em>Adjusted R²</em>.</div>
+            <p class="simple"><b>Ibaratnya:</b> skor 0,80 artinya 80% naik-turun “nilai ulangan” (audit delay) bisa dijelaskan oleh ketiga guru itu — sisa 20% masih misteri, belum mampu dijelaskan model.</p>
         </div>
       </div>
 
