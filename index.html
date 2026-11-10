@@ -303,11 +303,11 @@
             <li><strong>X₃</strong> = EBIT ÷ total aset</li>
             <li><strong>X₄</strong> = total ekuitas ÷ total liabilitas</li>
           </ul>
-          <p class="small" style="margin-top:10px">Kenapa pilih versi empat variabel: versi ini tidak butuh komponen <em>sales to total assets</em>, jadi pas untuk perusahaan nonmanufaktur seperti telekomunikasi — dan keempat komponennya semuanya sudah tersedia di laporan keuangan.</p>
+          <p class="small" style="margin-top:10px"><strong>Apa itu:</strong> financial distress adalah kondisi perusahaan yang mengalami permasalahan keuangan dan dapat berkembang menuju kegagalan usaha — dari failure, insolvency, default, sampai bankruptcy. <strong>Altman Z-Score</strong> adalah model yang menggabungkan empat rasio keuangan untuk mengklasifikasi perusahaan berdasarkan kemungkinan kegagalan keuangan itu: nilai Z yang rendah berarti makin dekat ke tekanan keuangan, tinggi berarti makin sehat. Di skripsi ini dipilih versi empat variabel karena tidak membutuhkan komponen <em>sales to total assets</em> — pas untuk perusahaan nonmanufaktur seperti telekomunikasi, dan keempat komponennya semuanya sudah tersedia di laporan keuangan.</p>
         </div>
         <div class="card">
           <h3>DAR &amp; ROA</h3>
-          <p>DAR menunjukkan seberapa besar aset perusahaan dibiayai utang — makin tinggi, makin banyak kewajiban yang harus dicek auditor. ROA menunjukkan kemampuan aset menghasilkan laba — makin tinggi, makin sehat kondisi keuangannya. Audit delay menghitung selisih hari antara keduanya: dari tanggal tutup buku sampai laporan audit keluar.</p>
+          <p><strong>DAR</strong> = rasio yang membandingkan total utang dengan total aset untuk menunjukkan proporsi aset yang dibiayai oleh utang. Contohnya: DAR 50% berarti setengah aset perusahaan didanai liabilitas, sisanya dari pendanaan lain. <strong>ROA</strong> = rasio yang menunjukkan kemampuan perusahaan menghasilkan laba bersih dengan memanfaatkan keseluruhan aset yang dimiliki. <strong>Audit delay</strong> = jangka waktu penyelesaian audit, dihitung sejak tanggal berakhirnya periode pelaporan sampai tanggal diterbitkannya laporan auditor independen — panjang-pendeknya menunjukkan cepat atau lambatnya penyelesaian pemeriksaan.</p>
           <div class="formula">
             <span class="lbl">Leverage</span>
             DAR = <span class="frac"><span class="num">Total Liabilitas</span><span class="den">Total Aset</span></span> × 100%
@@ -471,7 +471,7 @@
 
         <div class="card">
           <h3>Purposive sampling</h3>
-          <p><strong>Purposive sampling</strong> artinya sampel dipilih berdasarkan kriteria yang ditetapkan sendiri, bukan diacak. Alasannya praktis: analisis panel mewajibkan tiap perusahaan punya data utuh lima tahun, dan acak bisa saja memasukkan perusahaan yang laporannya bolong.</p>
+          <p><strong>Non-probability sampling</strong> = teknik pengambilan sampel yang tidak memberi peluang sama bagi setiap anggota populasi untuk terpilih. Metodenya <strong>purposive sampling</strong>: sampel dipilih berdasarkan kriteria tertentu yang ditetapkan sendiri oleh peneliti, dengan tujuan memperoleh perusahaan yang datanya sesuai kebutuhan penelitian — di sini: data utuh lima tahun. Itu sebabnya 6 dari 22 perusahaan dikeluarkan lewat kriteria di bawah, bukan diacak.</p>
           <ul class="bullets">
             <li><strong>Kriteria 1:</strong> terdaftar di BEI selama 2021–2025 secara berturut-turut.</li>
             <li><strong>Kriteria 2:</strong> menerbitkan laporan keuangan dan laporan tahunan secara lengkap.</li>
@@ -561,7 +561,7 @@
       <div class="grid-2" style="margin-bottom:18px">
         <div class="card">
           <div class="card-head"><span class="num-badge">1</span><h3>Analisis deskriptif</h3></div>
-          <p>Pelajaran pertama sebelum kesimpulan: nilai minimum, maksimum, rata-rata, dan standar deviasi keempat variabel — jadi kelihatan, misalnya, seberapa lebarnya rentang audit delay di 16 perusahaan itu.</p>
+          <p>Tahap pertama sebelum ngutak-ngatik model: menyajikan karakteristik keempat variabel lewat statistik dasar — minimum, maksimum, rata-rata, dan standar deviasi. Gunanya biar ada gambaran awal, misalnya seberapa lebarnya rentang audit delay di 16 perusahaan itu, sebelum model apa pun diuji.</p>
           <div class="note ok" style="margin-top:12px">
             <div class="note-label">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
@@ -590,19 +590,24 @@
         <p class="tree-note">Klik hasil p-value yang kamu dapat. Alurnya ngikut logika di draft, bukan hasil data asli.</p>
       </div>
 
+      <div class="note">
+        <div class="note-label">Tiga model kandidat, satu batas keputusan</div>
+        <p>Data 16 perusahaan × 5 tahun = 80 observasi berbentuk <strong>data panel</strong>: gabungan lintas perusahaan dan lintas waktu. Karena itu satu model regresi biasa nggak otomatis pas — ada tiga kandidat. <strong>CEM</strong> (Common Effect Model) menganggap semua perusahaan punya karakteristik yang sama. <strong>FEM</strong> (Fixed Effect Model) memberi tiap perusahaan intersep sendiri. <strong>REM</strong> (Random Effect Model) memperlakukan perbedaan antarperusahaan sebagai komponen acak. Model yang dipilih ditentukan lewat uji Chow, lalu Hausman, lalu LM — ketiganya diuji dengan batas probabilitas 0,05, sesuai urutan alur di bawah.</p>
+      </div>
+
       <h3 style="font-size:1.35rem;margin:30px 0 12px">Uji asumsi klasik</h3>
       <div class="grid-2">
         <div class="card test-card">
           <span class="symbol">VIF</span>
           <h4>Multikolinearitas</h4>
-          <p>Menguji apakah antar-variabel independen saling berkorelasi tinggi. Model yang baik tidak mengalami multikolinearitas.</p>
+          <p>Mengetahui apakah ada korelasi antar variabel independen dalam model. Harus dicek karena korelasi yang tinggi bisa mengacaukan ketepatan estimasi koefisien regresi — model yang baik tidak mengalaminya. Diukur lewat Tolerance (harus &gt; 0,10) dan VIF (harus &lt; 10).</p>
           <div class="threshold"><span>Tolerance &gt; 0,10</span><span>VIF &lt; 10</span></div>
           <div class="rule"><b>Kalau lolos:</b> koefisien regresi bisa dipercaya arahnya. <b>Kalau gagal:</b> antar-X saling menjelaskan, estimasi jadi tidak stabil.</div>
         </div>
         <div class="card test-card">
           <span class="symbol">σ²</span>
           <h4>Heteroskedastisitas</h4>
-          <p>Menguji apakah varians residual tetap dari satu pengamatan ke pengamatan lain. Yang diinginkan: varians tetap (homoskedastisitas).</p>
+          <p>Mengetahui apakah varians residual beda dari satu pengamatan ke pengamatan lainnya. Yang diinginkan justru variansnya tetap (homoskedastisitas); model yang baik tidak mengalami heteroskedastisitas. Diuji lewat Glejser: signifikansi di atas 0,05 berarti aman.</p>
           <div class="threshold"><span>Uji Glejser</span><span>sig. &gt; 0,05</span></div>
           <div class="rule"><b>Kalau lolos:</b> residual tidak membentuk pola. <b>Kalau gagal:</b> varians tidak konstan, model perlu diperbaiki.</div>
         </div>
@@ -625,19 +630,19 @@
         <div class="card test-card">
           <span class="symbol">t</span>
           <h4>Uji t — parsial</h4>
-          <p>Menguji pengaruh masing-masing X terhadap Y, satu per satu.</p>
+          <p>Dipakai untuk mengetahui pengaruh setiap variabel independen secara <em>parsial</em> terhadap audit delay: apakah financial distress sendiri, leverage sendiri, dan profitabilitas sendiri masing-masing berpengaruh signifikan. Keputusannya memakai tingkat signifikansi 5% (α = 0,05): probabilitas lebih kecil dari 0,05 berarti berpengaruh signifikan, lebih besar berarti tidak signifikan.</p>
           <div class="rule"><b>Baca:</b> probabilitas &lt; 0,05 → signifikan secara parsial. Lihat juga tanda koefisiennya.</div>
         </div>
         <div class="card test-card">
           <span class="symbol">F</span>
           <h4>Uji F — simultan</h4>
-          <p>Menguji pengaruh ketiga X secara bersama-sama terhadap Y.</p>
+          <p>Dipakai untuk mengetahui apakah financial distress, leverage, dan profitabilitas secara <em>bersama-sama</em> berpengaruh terhadap audit delay. Keputusannya juga di ambang 5%: probabilitas lebih kecil dari 0,05 berarti pengaruh simultannya signifikan, lebih besar berarti tidak signifikan.</p>
           <div class="rule"><b>Baca:</b> probabilitas &lt; 0,05 → model secara simultan signifikan.</div>
         </div>
         <div class="card test-card">
           <span class="symbol">R²</span>
           <h4>Koefisien determinasi</h4>
-          <p>Mengukur seberapa besar variasi audit delay dijelaskan ketiga X.</p>
+          <p>Mengukur kemampuan ketiga variabel independen dalam menjelaskan variasi audit delay — seberapa besar variasi pada audit delay yang bisa dijelaskan model. Nilainya di rentang nol sampai satu: makin dekat ke 1 berarti kemampuan penjelasan model makin besar; rendah berarti penjelasannya masih terbatas.</p>
           <div class="rule"><b>Baca:</b> 0 sampai 1. Makin dekat 1, makin besar daya jelas model. Pada data panel, lihat <em>Adjusted R²</em>.</div>
         </div>
       </div>
