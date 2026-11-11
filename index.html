@@ -300,7 +300,7 @@
           <p><strong>Apa itu:</strong> jangka waktu penyelesaian proses audit atas laporan keuangan — dihitung sejak tanggal berakhirnya periode pelaporan sampai tanggal diterbitkannya laporan auditor independen. Panjang-pendeknya menunjukkan cepat atau lambatnya penyelesaian pemeriksaan. Ini variabel dependennya: financial distress, leverage, dan profitabilitas diuji pengaruhnya ke sini.</p>
           <div class="formula"><span class="lbl">Rumus</span>Waktu audit = tanggal laporan audit − tanggal laporan keuangan<br><span style="font-size:.875rem">selisih kedua tanggal dinyatakan dalam jumlah hari — dan tanggal laporan keuangan (tutup buku) selalu jatuh di akhir tahun, 31 Desember, karena yang dipakai laporan keuangan tahunan. Jadi hitungannya tinggal dari 31 Desember sampai tanggal laporan audit keluar.</span></div>
           <div class="rule"><b>Kenapa diukur begini:</b> ukurannya objektif — kedua tanggal tercantum di laporan keuangan tahunan yang telah diaudit. Makin besar selisih harinya, makin panjang waktu penyelesaian audit.</div>
-          <p class="simple"><b>Ibaratnya:</b> tutup buku itu kayak ulangan selesai, laporan auditor itu kayak rapornya terbit. Yang dihitung: berapa lama nunggu rapornya — makin lama nunggu, makin lambat pemeriksaannya.</p>
+          <p class="simple"><b>Ibaratnya:</b> tiap 31 Desember operator telco menutup bukunya — datanya dianggap lengkap. Dari situ auditor mulai memeriksa, sampai laporan auditnya terbit. Yang dihitung di kartu ini: berapa hari nunggunya — makin lama, makin lambat pemeriksaannya.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">X₁</span>
@@ -314,7 +314,7 @@
             <li><strong>X₄</strong> = total ekuitas ÷ total liabilitas</li>
           </ul>
           <div class="rule"><b>Kenapa versi empat variabel:</b> tidak membutuhkan komponen <em>sales to total assets</em> — pas untuk perusahaan nonmanufaktur seperti telekomunikasi, dan keempat komponennya sudah tersedia di laporan keuangan.</div>
-          <p class="simple"><b>Ibaratnya:</b> Z-Score itu EKG yang nyangkut empat sensor: modal kerja, saldo laba, laba operasi, dan kekuatan ekuitas dibanding utang. Nilai Z rendah = detaknya melemah, makin dekat kondisi kritis; Z tinggi = keuangan perusahaannya sehat.</p>
+          <p class="simple"><b>Ibaratnya:</b> kayak mengecek kondisi operator: masih punya dana jalan (modal kerja), masih menyimpan untung (saldo laba), masih untung dari operasinya, dan hartanya belum habis buat bayar utang. Nilai Z rendah = kondisinya melemah, makin dekat kritis; tinggi = masih sehat.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">X₂</span>
@@ -325,7 +325,7 @@
             DAR = <span class="frac"><span class="num">Total Liabilitas</span><span class="den">Total Aset</span></span> × 100%
           </div>
           <div class="rule"><b>Kenapa DAR:</b> dipilih jadi ukuran leverage karena mampu menunjukkan proporsi aset yang dibiayai liabilitas — dari situ kelihatan seberapa besar perusahaan mengandalkan pendanaan kreditur untuk membentuk aset usahanya.</div>
-          <p class="simple"><b>Ibaratnya:</b> DAR mengecek “berapa persen barang di kedai yang masih dicicil sama bank” — makin tinggi, makin banyak aset yang belum bener-bener milik sendiri.</p>
+          <p class="simple"><b>Ibaratnya:</b> banyak menara telco dibangun pakai utang. DAR mengecek: berapa persen aset operator — menara, peralatan, dan lainnya — yang masih didanai utang. Makin tinggi, makin banyak aset yang belum bener-bener milik sendiri.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">X₃</span>
@@ -336,7 +336,7 @@
             ROA = <span class="frac"><span class="num">Laba Bersih Setelah Pajak</span><span class="den">Total Aktiva</span></span> × 100%
           </div>
           <div class="rule"><b>Kenapa ROA:</b> dipilih jadi ukuran profitabilitas karena menunjukkan hasil yang diperoleh perusahaan dari pemanfaatan asetnya dalam menjalankan kegiatan usaha.</div>
-          <p class="simple"><b>Ibaratnya:</b> ROA mengecek “sepanjang tahun, tiap rupiah aset menghasilkan untung berapa” — makin tinggi, makin produktif barang-barang kedainya.</p>
+          <p class="simple"><b>Ibaratnya:</b> dari seluruh menara dan peralatan yang dimiliki operator, tiap rupiah aset menghasilkan laba berapa sepanjang tahun — makin tinggi, makin produktif asetnya.</p>
         </div>
       </div>
 
@@ -618,21 +618,21 @@
           <h4>Common Effect Model</h4>
           <p>Semua perusahaan dianggap punya karakteristik yang sama, jadi satu intersep dipakai bersama. Jadi kandidat karena paling sederhana — jalur dasar yang diadu paling awal lewat uji Chow.</p>
           <div class="threshold"><span>Chow p &gt; 0,05 → terpilih</span></div>
-          <p class="simple"><b>Ibaratnya:</b> 16 kedai dianggap identik — cukup satu resep buat semua, nggak peduli lokasinya beda-beda.</p>
+          <p class="simple"><b>Ibaratnya:</b> 16 operator dianggap punya karakter sama — cukup satu model buat semua, nggak peduli operator besarnya beda-beda.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">FEM</span>
           <h4>Fixed Effect Model</h4>
           <p>Tiap perusahaan punya intersep sendiri; perbedaan antarperusahaan dianggap efek yang tetap. Jadi kandidat kalau uji Chow menunjukkan perusahaan tidak bisa diseragamkan.</p>
           <div class="threshold"><span>Chow p &lt; 0,05</span><span>Hausman p &lt; 0,05</span></div>
-          <p class="simple"><b>Ibaratnya:</b> tiap kedai dikasih resep sendiri sesuai kondisinya — kedai pinggir jalan beda perlakuan sama kedai di mall, dan perbedaannya itu dianggap bawaan tetap.</p>
+          <p class="simple"><b>Ibaratnya:</b> tiap operator dikasih titik awal sendiri — operator besar dan operator kecil dianggap memang beda karakter bawaannya, dan beda itu dianggap tetap.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">REM</span>
           <h4>Random Effect Model</h4>
           <p>Perbedaan antarperusahaan diperlakukan sebagai komponen acak, bukan karakter tetap. Jadi kandidat lewat uji Hausman; kalau Hausman memilih REM, uji LM yang menyelesaikan CEM vs REM.</p>
           <div class="threshold"><span>Hausman p &gt; 0,05</span><span>LM p &lt; 0,05 → REM</span></div>
-          <p class="simple"><b>Ibaratnya:</b> beda hasil tiap kedai dianggap seperti cuaca — kadang ramai kadang sepi, kebetulan doang, bukan karena karakternya.</p>
+          <p class="simple"><b>Ibaratnya:</b> beda hasil antaroperator dianggap seperti fluktuasi pelanggan bulanan — kadang ramai kadang sepi, acak, bukan karakter tetap.</p>
         </div>
       </div>
 
@@ -644,7 +644,7 @@
           <p>Mengecek apakah residual model regresi berdistribusi normal. Diuji dengan Jarque-Bera: probabilitas &gt; 0,05 berarti residual berdistribusi normal; lebih kecil berarti tidak.</p>
           <div class="threshold"><span>Uji Jarque-Bera</span><span>sig. &gt; 0,05</span></div>
           <div class="rule"><b>Kalau lolos:</b> asumsi distribusi residual terpenuhi. <b>Kalau gagal:</b> residual tidak normal, perlu perbaikan model atau transformasi data.</div>
-          <p class="simple"><b>Ibaratnya:</b> sebelum masak, cek airnya dulu — kalau air kotor, masakan apa pun jadi diragukan. Residual itu “air”-nya model: harus bersih (normal) dulu, baru hasil uji lainnya boleh dipercaya.</p>
+          <p class="simple"><b>Ibaratnya:</b> sebelum percaya hasil tes kecepatan, operator ngecek dulu jaringannya sehat — kalau jaringannya error, hasil tes sebagus apa pun diragukan. Residual itu “jaringan”-nya model: harus normal dulu, baru hasil uji lain boleh dipercaya.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">VIF</span>
@@ -652,7 +652,7 @@
           <p>Mengetahui apakah ada korelasi antar variabel independen dalam model. Harus dicek karena korelasi yang tinggi bisa mengacaukan ketepatan estimasi koefisien regresi — model yang baik tidak mengalaminya. Diukur lewat Tolerance (harus &gt; 0,10) dan VIF (harus &lt; 10).</p>
           <div class="threshold"><span>Tolerance &gt; 0,10</span><span>VIF &lt; 10</span></div>
           <div class="rule"><b>Kalau lolos:</b> koefisien regresi bisa dipercaya arahnya. <b>Kalau gagal:</b> antar-X saling menjelaskan, estimasi jadi tidak stabil.</div>
-          <p class="simple"><b>Ibaratnya:</b> mewawancara dua saksi yang selalu menjawab persis sama — bukan berarti lebih yakin, malah gak jelas siapa yang jujur. Kalau dua variabel selalu ngomong sama, satu aja cukup, dua-duanya malah bikin bingung.</p>
+          <p class="simple"><b>Ibaratnya:</b> dua menara yang selalu mengirim sinyal persis sama di satu area — bukan berarti jaringan makin kuat, malah saling ganggu. Variabel independen yang isinya mirip juga: satu aja cukup; kalau dua-duanya masuk, estimasi jadi kacau.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">σ²</span>
@@ -660,7 +660,7 @@
           <p>Mengetahui apakah varians residual beda dari satu pengamatan ke pengamatan lainnya. Yang diinginkan justru variansnya tetap (homoskedastisitas); model yang baik tidak mengalami heteroskedastisitas. Diuji lewat Glejser: signifikansi di atas 0,05 berarti aman.</p>
           <div class="threshold"><span>Uji Glejser</span><span>sig. &gt; 0,05</span></div>
           <div class="rule"><b>Kalau lolos:</b> residual tidak membentuk pola. <b>Kalau gagal:</b> varians tidak konstan, model perlu diperbaiki.</div>
-          <p class="simple"><b>Ibaratnya:</b> hujan yang rapi — tetesnya jatuh seimbang dari kiri ke kanan. Kalau di ujung kanan tahu-tahu derasnya dobel, artinya penimbangannya gak seimbang dan hasilnya perlu diperiksa lagi.</p>
+          <p class="simple"><b>Ibaratnya:</b> sinyal yang sehat harusnya stabil sepanjang jalan — kalau di titik tertentu tahu-tahu drop parah cuma di situ, ada yang tidak merata. Residual juga: variansnya harus tetap di semua pengamatan; kalau berubah-ubah, hasilnya perlu diperiksa lagi.</p>
         </div>
       </div>
 
@@ -683,21 +683,21 @@
           <h4>Uji t — parsial</h4>
           <p>Dipakai untuk mengetahui pengaruh setiap variabel independen secara <em>parsial</em> terhadap audit delay: apakah financial distress sendiri, leverage sendiri, dan profitabilitas sendiri masing-masing berpengaruh signifikan. Keputusannya memakai tingkat signifikansi 5% (α = 0,05): probabilitas lebih kecil dari 0,05 berarti berpengaruh signifikan, lebih besar berarti tidak signifikan.</p>
           <div class="rule"><b>Baca:</b> probabilitas &lt; 0,05 → signifikan secara parsial. Lihat juga tanda koefisiennya.</div>
-            <p class="simple"><b>Ibaratnya:</b> tiga guru ditanya satu-satu: “guru ini sendiri nggak ngefek ke nilai ulanganmu?” — tanpa campuran temannya. Yang dijawab “nggefek” itu yang signifikan parsial.</p>
+            <p class="simple"><b>Ibaratnya:</b> ketiga faktor ditanya satu-satu: “kamu sendiri nggak ngefek ke lama audit laporan operator?” — tanpa campur faktor lainnya. Yang dijawab “ngefek sendiri” itu yang signifikan secara parsial.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">F</span>
           <h4>Uji F — simultan</h4>
           <p>Dipakai untuk mengetahui apakah financial distress, leverage, dan profitabilitas secara <em>bersama-sama</em> berpengaruh terhadap audit delay. Keputusannya juga di ambang 5%: probabilitas lebih kecil dari 0,05 berarti pengaruh simultannya signifikan, lebih besar berarti tidak signifikan.</p>
           <div class="rule"><b>Baca:</b> probabilitas &lt; 0,05 → model secara simultan signifikan.</div>
-            <p class="simple"><b>Ibaratnya:</b> kalimatnya jadi “semua guru, jawab bareng-bareng dong” — nilai tiga-tiganya dijumlah jadi satu paket. Kalau paketnya pengaruh, berarti secara kelompok mereka memang ngefek.</p>
+            <p class="simple"><b>Ibaratnya:</b> kalimatnya jadi “ketiga faktor, jawab bareng-bareng dong” — pengaruh financial distress, leverage, dan profitabilitas digabung jadi satu paket ke lama audit. Kalau paketnya ngefek, berarti secara kelompok mereka berpengaruh.</p>
         </div>
         <div class="card test-card">
           <span class="symbol">R²</span>
           <h4>Koefisien determinasi</h4>
           <p>Mengukur kemampuan ketiga variabel independen dalam menjelaskan variasi audit delay — seberapa besar variasi pada audit delay yang bisa dijelaskan model. Nilainya di rentang nol sampai satu: makin dekat ke 1 berarti kemampuan penjelasan model makin besar; rendah berarti penjelasannya masih terbatas.</p>
           <div class="rule"><b>Baca:</b> 0 sampai 1. Makin dekat 1, makin besar daya jelas model. Pada data panel, lihat <em>Adjusted R²</em>.</div>
-            <p class="simple"><b>Ibaratnya:</b> skor 0,80 artinya 80% naik-turun “nilai ulangan” (audit delay) bisa dijelaskan oleh ketiga guru itu — sisa 20% masih misteri, belum mampu dijelaskan model.</p>
+            <p class="simple"><b>Ibaratnya:</b> R² 0,80 artinya 80% naik-turun lama audit laporan operator bisa dijelaskan oleh ketiga faktor itu — sisa 20% masih dijelaskan hal-hal lain di luar model.</p>
         </div>
       </div>
 
