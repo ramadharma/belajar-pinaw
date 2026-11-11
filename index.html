@@ -255,7 +255,7 @@
         <div>
           <p class="sec-kicker">Bagian C · hal. 63–65</p>
           <h2>Variabel &amp; cara mengukurnya</h2>
-          <p class="lede-sm">Ini bagian yang paling sering ditanya. Empat variabel, tiap-tiap punya rumus yang pasti — cukup tahu apa makna tiap rumusnya; perhitungan angkanya nanti dikerjakan di Excel.</p>
+          <p class="lede-sm">Ini bagian yang paling sering ditanya. Empat variabel, empat kartu: apa itu, rumusnya, kenapa rumus ini dipilih, plus ibaratnya. Perhitungan angkanya nanti dikerjakan di Excel.</p>
         </div>
       </div>
 
@@ -294,8 +294,18 @@
       </div>
 
       <div class="grid-2" style="margin-top:18px">
-        <div class="card">
-          <h3>Altman Z-Score (X1)</h3>
+        <div class="card test-card">
+          <span class="symbol">Y</span>
+          <h4>Audit delay</h4>
+          <p><strong>Apa itu:</strong> jangka waktu penyelesaian proses audit atas laporan keuangan — dihitung sejak tanggal berakhirnya periode pelaporan sampai tanggal diterbitkannya laporan auditor independen. Panjang-pendeknya menunjukkan cepat atau lambatnya penyelesaian pemeriksaan. Ini variabel dependennya: financial distress, leverage, dan profitabilitas diuji pengaruhnya ke sini.</p>
+          <div class="formula"><span class="lbl">Rumus</span>Waktu audit = tanggal laporan audit − tanggal laporan keuangan<br><span style="font-size:.875rem">selisih kedua tanggal dinyatakan dalam jumlah hari</span></div>
+          <div class="rule"><b>Kenapa diukur begini:</b> ukurannya objektif — kedua tanggal tercantum di laporan keuangan tahunan yang telah diaudit. Makin besar selisih harinya, makin panjang waktu penyelesaian audit.</div>
+          <p class="simple"><b>Ibaratnya:</b> tutup buku itu kayak ulangan selesai, laporan auditor itu kayak rapornya terbit. Yang dihitung: berapa lama nunggu rapornya — makin lama nunggu, makin lambat pemeriksaannya.</p>
+        </div>
+        <div class="card test-card">
+          <span class="symbol">X₁</span>
+          <h4>Financial distress</h4>
+          <p><strong>Apa itu:</strong> kondisi perusahaan yang mengalami permasalahan keuangan dan dapat berkembang menuju kegagalan usaha — dari failure, insolvency, default, sampai bankruptcy. Diukur dengan <strong>Altman Z-Score</strong>, model yang menggabungkan empat rasio keuangan untuk mengklasifikasi kemungkinan kegagalan itu: Z rendah = makin dekat tekanan keuangan, tinggi = makin sehat.</p>
           <div class="formula"><span class="lbl">Rumus</span>Z = 6,56 X₁ + 3,26 X₂ + 6,72 X₃ + 1,05 X₄</div>
           <ul class="bullets">
             <li><strong>X₁</strong> = modal kerja ÷ total aset</li>
@@ -303,26 +313,30 @@
             <li><strong>X₃</strong> = EBIT ÷ total aset</li>
             <li><strong>X₄</strong> = total ekuitas ÷ total liabilitas</li>
           </ul>
-          <p class="small" style="margin-top:10px"><strong>Apa itu:</strong> financial distress adalah kondisi perusahaan yang mengalami permasalahan keuangan dan dapat berkembang menuju kegagalan usaha — dari failure, insolvency, default, sampai bankruptcy. <strong>Altman Z-Score</strong> adalah model yang menggabungkan empat rasio keuangan untuk mengklasifikasi perusahaan berdasarkan kemungkinan kegagalan keuangan itu: nilai Z yang rendah berarti makin dekat ke tekanan keuangan, tinggi berarti makin sehat. Di skripsi ini dipilih versi empat variabel karena tidak membutuhkan komponen <em>sales to total assets</em> — pas untuk perusahaan nonmanufaktur seperti telekomunikasi, dan keempat komponennya semuanya sudah tersedia di laporan keuangan.</p>
+          <div class="rule"><b>Kenapa versi empat variabel:</b> tidak membutuhkan komponen <em>sales to total assets</em> — pas untuk perusahaan nonmanufaktur seperti telekomunikasi, dan keempat komponennya sudah tersedia di laporan keuangan.</div>
           <p class="simple"><b>Ibaratnya:</b> Z-Score itu EKG yang nyangkut empat sensor: modal kerja, saldo laba, laba operasi, dan kekuatan ekuitas dibanding utang. Nilai Z rendah = detaknya melemah, makin dekat kondisi kritis; Z tinggi = keuangan perusahaannya sehat.</p>
         </div>
-        <div class="card">
-          <h3>DAR &amp; ROA</h3>
-          <p><strong>DAR</strong> = rasio yang membandingkan total utang dengan total aset untuk menunjukkan proporsi aset yang dibiayai oleh utang. Contohnya: DAR 50% berarti setengah aset perusahaan didanai liabilitas, sisanya dari pendanaan lain. <strong>ROA</strong> = rasio yang menunjukkan kemampuan perusahaan menghasilkan laba bersih dengan memanfaatkan keseluruhan aset yang dimiliki. <strong>Audit delay</strong> = jangka waktu penyelesaian audit, dihitung sejak tanggal berakhirnya periode pelaporan sampai tanggal diterbitkannya laporan auditor independen — panjang-pendeknya menunjukkan cepat atau lambatnya penyelesaian pemeriksaan.</p>
-          <p class="small" style="margin-top:10px"><strong>Kenapa dipakai di skripsi ini:</strong> DAR dipilih jadi ukuran leverage karena mampu menunjukkan proporsi aset yang dibiayai liabilitas — dari situ kelihatan seberapa besar perusahaan mengandalkan pendanaan kreditur untuk membentuk aset usahanya. ROA dipilih jadi ukuran profitabilitas karena menunjukkan hasil yang diperoleh perusahaan dari pemanfaatan asetnya dalam menjalankan usaha.</p>
-          <p class="simple"><b>Ibaratnya:</b> DAR itu mengecek “berapa persen barang di kedai yang masih dicicil sama bank” — makin tinggi, makin banyak aset yang belum bener-bener milik sendiri. ROA mengecek “sepanjang tahun, tiap rupiah aset menghasilkan untung berapa” — makin tinggi, makin produktif barang-barangnya.</p>
+        <div class="card test-card">
+          <span class="symbol">X₂</span>
+          <h4>Leverage</h4>
+          <p><strong>Apa itu:</strong> leverage berkaitan dengan penggunaan utang sebagai sumber pendanaan dalam struktur modal — rasinya mengukur kemampuan perusahaan memenuhi seluruh kewajibannya, jangka pendek maupun jangka panjang. Diukur dengan <strong>DAR</strong>: membandingkan total utang dengan total aset untuk menunjukkan proporsi aset yang dibiayai utang. Contoh: DAR 50% = setengah aset perusahaan didanai liabilitas, sisanya dari pendanaan lain.</p>
           <div class="formula">
-            <span class="lbl">Leverage</span>
+            <span class="lbl">Rumus</span>
             DAR = <span class="frac"><span class="num">Total Liabilitas</span><span class="den">Total Aset</span></span> × 100%
           </div>
+          <div class="rule"><b>Kenapa DAR:</b> dipilih jadi ukuran leverage karena mampu menunjukkan proporsi aset yang dibiayai liabilitas — dari situ kelihatan seberapa besar perusahaan mengandalkan pendanaan kreditur untuk membentuk aset usahanya.</div>
+          <p class="simple"><b>Ibaratnya:</b> DAR mengecek “berapa persen barang di kedai yang masih dicicil sama bank” — makin tinggi, makin banyak aset yang belum bener-bener milik sendiri.</p>
+        </div>
+        <div class="card test-card">
+          <span class="symbol">X₃</span>
+          <h4>Profitabilitas</h4>
+          <p><strong>Apa itu:</strong> rasio yang digunakan untuk menilai kemampuan perusahaan dalam menghasilkan laba. Diukur dengan <strong>ROA</strong>: menunjukkan kemampuan perusahaan menghasilkan laba bersih dengan memanfaatkan keseluruhan aset yang dimiliki.</p>
           <div class="formula">
-            <span class="lbl">Profitabilitas</span>
-            ROA = <span class="frac"><span class="num">Laba Bersih Setelah Pajak</span><span class="den">Total Aset</span></span> × 100%
+            <span class="lbl">Rumus</span>
+            ROA = <span class="frac"><span class="num">Laba Bersih Setelah Pajak</span><span class="den">Total Aktiva</span></span> × 100%
           </div>
-          <div class="formula">
-            <span class="lbl">Audit delay</span>
-            Hari = tanggal laporan audit − tanggal tutup buku
-          </div>
+          <div class="rule"><b>Kenapa ROA:</b> dipilih jadi ukuran profitabilitas karena menunjukkan hasil yang diperoleh perusahaan dari pemanfaatan asetnya dalam menjalankan kegiatan usaha.</div>
+          <p class="simple"><b>Ibaratnya:</b> ROA mengecek “sepanjang tahun, tiap rupiah aset menghasilkan untung berapa” — makin tinggi, makin produktif barang-barang kedainya.</p>
         </div>
       </div>
 

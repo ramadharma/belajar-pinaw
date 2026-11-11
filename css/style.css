@@ -305,7 +305,6 @@ input[type="range"]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;b
 .test-card .rule b{color:var(--plum);font-weight:400}
 .simple{background:var(--blush);border-radius:var(--r-sm);padding:14px 16px;font-size:.9375rem;line-height:1.6;color:var(--plum);margin-top:12px}
 .simple b{color:var(--plum-deep);font-weight:400}
-.test-card .rule b{color:var(--plum);font-weight:400}
 .threshold{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
 .threshold span{font-size:12px;background:var(--blush-soft);border-radius:var(--r-pill);padding:6px 10px;color:var(--rose-deep);font-variant-numeric:tabular-nums;white-space:nowrap}
 
